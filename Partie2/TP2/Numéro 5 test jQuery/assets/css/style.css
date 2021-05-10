@@ -1,0 +1,105 @@
+
+/*============ FONTS ============*/
+@font-face {
+    font-family: 'Matcha';
+    src: url(../font/Matcha-Latte.ttf);
+}
+@font-face {
+    font-family: 'Cutie';
+    src: url(../font/Cutie-Shark.ttf);
+}
+@font-face {
+    font-family: 'Not bad';
+    src: url(../font/Not-Bad.ttf);
+}
+@font-face {
+    font-family: 'Gill Sans Light';
+    src: url(../font/gill-sans-mt-light.ttf);
+}
+
+/*============  BACKGROUND ============*/
+.bgPart1{
+    background-image: url('../img/bg.png');
+    background-size: cover;
+    height: 100vh;
+}
+.bgPart2{
+    background-image: url('../img/bgopen.png');
+    background-size: cover;
+    height: 100vh;
+}
+
+/* Taille page*/
+.firstPage{
+    height: 100vh;
+}
+
+/*============ BUTTON PLAY ============*/
+/* Boutton Play première page*/
+
+#buttonEnter{
+    font-family: 'Bowlby One SC', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;;
+    font-size : 3em;
+    color : white;
+    width: 300px;
+    height: 300px;
+} 
+#buttonEnter:hover{
+    font-size : 4em;
+    height: 400px;
+    width: 400px;
+}
+#buttonEnter:focus{
+    box-shadow: none;
+}
+
+/*============  MISE EN FORME TEXTE ============*/
+h1{
+    font-family: 'Bowlby One SC', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;;
+    font-size : 2.5em;
+}
+h2{
+    font-family: 'Bowlby One SC', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;;
+    font-size : 2.5em;
+}
+
+/*============  PART 2 Formulaire + button ============*/
+input{
+    background-color: #D6CFBA;
+    border : none;
+    height : auto;
+}
+
+.marginFr{
+    margin-top: -0.4rem;
+}
+.marginHist{
+    margin-top: -0.5rem;
+}
+.marginMatieres{
+    margin-top: 5rem;
+} 
+
+.marginPrenom{
+    margin-top: 5rem;
+}
+.marginPrenompart3{
+    margin-top: 8.1rem;
+}
+.marginNotes{
+    margin-top: 3.9rem;
+}
+.commentaire{
+    height: 75px;
+    font-family: 'Not bad' ;
+    font-size : 1.5em;
+    font-weight: bold;
+    color : red;
+}
+
+
+.prenom{
+    height : 50px;
+}
+
+

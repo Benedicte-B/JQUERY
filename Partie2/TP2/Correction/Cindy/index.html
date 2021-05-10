@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://api.fontshare.com/css?f[]=ranade@100,500&f[]=pencerio@50&f[]=clash-display@200&display=swap"display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Exercice TP-2</title>
+</head>
+<body>
+    <div id="wrapper">
+        <h1 id="title">Vous avez peur pour les résultats du bac . . .</h1>
+        <h2 id="textExpli">Calculez votre moyenne et voyez quelle apréciation vous pourriez avoir !</h2>
+        <!--Formulaire-->
+        <form  id="numbers" action="#">
+            <h3 id="titlForm">Je calcule ma moyenne</h3>
+            <label id="math">Mathématiques :</label>
+            <input id="noteOne" type="number" min="0" max="20">
+            <label id="french">Français :</label>
+            <input id="noteTwo" type="number" min="0" max="20">
+            <label id="hisGeo">Histoire &  Géographie :</label>
+            <input id="noteThree" type="number" min="0" max="20">
+            <label id="science">Sciences :</label>
+            <input id="noteFour" type="number" min="0" max="20">
+            <label id="lV">Langues vivantes :</label>
+            <input id="noteFive" type="number" min="0" max="20">
+            <button id="calc" type="button">Calculer</button>
+        </form>
+        <!--Afficher les résultats-->
+        <div id="result">
+            <h2>???</h2>
+        </div>
+    </div>
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

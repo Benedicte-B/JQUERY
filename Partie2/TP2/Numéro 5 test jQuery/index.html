@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Link Bootstrap 4.6-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!--Link CSS-->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!--Script FontAwasome-->
+    <script  src = " https://kit.fontawesome.com/d38cea82af.js " crossorigin ="anonymous"></script>  
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <title>JQUERY Partie 2 - TP 1</title>
+</head>
+<body>
+    <div class="container-fluid bgPart1 text-secondary">
+        <!-- Page 1 : Button Entrer -->
+        <div class="row d-block" id="firstPage">
+            <div class="col-12 firstPage text-center d-flex justify-content-center align-items-center">
+                <button class="btn" id="buttonEnter"> Entrer</button>
+            </div>
+        </div>
+        <!-- Part 2 : Notes -->
+        <div class="d-none" id="secondPage">
+            <div class="row">
+                <div class="col-5 offset-4 marginPrenom">
+                    <!-- Part 2 - Row 1 : Prénom -->
+                        <div class="form mt-5">
+                            <div class="row">
+                                <div class="col-4">
+                                    <label for="nomEleve" class="mt-3" >Entre ton prénom : </label>
+                                </div>
+                                <div class="col-3">
+                                    <input type="text" name="nomEleve" class="nomEleve mt-3" placeholder = "Prénom">
+                                </div>
+                            </div>
+                    <!-- Part 2 - Row 2 : Consignes -->
+                            <h1 class = "marginNotes ">Relevé de notes : </h1>
+                            <p class="mt-n1">Saisie tes notes sur 20 pour les matières suivantes</p>
+                    <!-- Part 2 - Row 3 :  Saisie notes-->
+                            <div class="row mt-5">
+                                <div class="col-4">
+                                    <p class="text-right">Maths : </p>
+                                </div>
+                                <div class="col-3">
+                                    <input type="text" name = "noteMaths" class="noteMaths mt-n5" placeholder = "Note sur 20">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4 mt-n1">
+                                    <p class="text-right">Français : </p>
+                                </div>
+                                <div class="col-3 marginFr">
+                                    <input type="text" name = "noteFr" class="noteFr" placeholder = "Note sur 20">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4 "> 
+                                    <p class="text-right mt-n1">Histoire : </p>
+                                </div>
+                                <div class="col-3 marginHist">
+                                    <input type="text" name = "noteHist" class="noteHist" placeholder = "Note sur 20">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <p class="text-right mt-n2">Sciences : </p>
+                                </div>
+                                <div class="col-3 mt-n2">
+                                    <input type="text" name = "noteSciences" class="noteSciences" placeholder = "Note sur 20">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <p class="text-right mt-n1">Sport : </p>
+                                </div>
+                                <div class="col-3 mt-n1">
+                                    <input type="text" name = "noteSport" class="noteSport" placeholder = "Note sur 20">
+                                </div>
+                            </div>
+                            <!-- Part 2 - Row 4 :  Button-->
+                            <div class="row mt-5">
+                                <div class="col-4 offset-4">
+                                    <button class="btn btn-secondary d-flex justify-content-center align-items-center text-center" id="buttonValider">Valider</button>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                </div>
+            </div>
+        </div>
+        <!-- Part 3 : Results -->
+        <div class="d-none" id="thirdPage">
+            <div class="col-5 offset-4">
+                <!-- Part 3 - Row 1 : Moyenne -->
+                <div class="row">
+                    <div class="col-10 text-center marginPrenompart3">
+                        <h2 class="prenom"></h2>
+                        <div class="moyenne1 text-center"></div>
+                        <h2 class="moyenne2 display-4"></h2>
+                        <div class="appreciation text-center"></div>
+                        <div class="commentaire"></div>
+                    </div>
+                </div>
+                <!-- Part 3 - Row 2 : détails matières -->
+                <div class="row marginMatieres">
+                    <div class="col-2">Maths</div>
+                    <div class="col-1 caseMaths"></div>
+                    <div class="col-8 appMaths"></div>
+
+                </div>
+                <div class="row mt-2 pt-1">
+                    <div class="col-2">Francais</div>
+                    <div class="col-1 caseFr"></div>
+                    <div class="col-8 appFr"></div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-2">Histoire</div>
+                    <div class="col-1 caseHist"></div>
+                    <div class="col-8 appHist"></div>
+                </div>
+                <div class="row mt-2 pt-1">
+                    <div class="col-2 ">Sciences</div>
+                    <div class="col-1 caseSciences"></div>
+                    <div class="col-8 appSciences"></div>
+                </div>
+                <div class="row mt-2 pt-1">
+                    <div class="col-2 ">Sport</div>
+                    <div class="col-1 caseSport"></div>
+                    <div class="col-8 appSport"></div>
+                </div>
+        </div>
+        </div>
+    </div>
+
+
+
+
+    <!--Script Boostrap JQuery-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <!--Script JS-->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
