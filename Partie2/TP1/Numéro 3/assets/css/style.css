@@ -1,0 +1,92 @@
+
+/*============ FONTS ============*/
+@font-face {
+    font-family:'DJB' ;
+    src: url('../font/DJB.ttf');
+}
+@font-face {
+    font-family:'Starjout' ;
+    src: url('../font/Starjout.ttf');
+}
+@font-face {
+    font-family:'Stjedise' ;
+    src: url('../font/STJEDISE.TTF');
+}
+
+
+/*============ BACKGROUND ============*/
+.bgLJP{
+    background-image : url('../img/bg-LJPps.jpg');
+    background-size: cover ;
+    height: 100vh;
+}
+.bgBlue{
+    background-image : url('../img/bg-LJPblue-light2.jpg');
+    background-size: cover ;
+    height: 100vh;
+}
+/* Taille page*/
+.firstPage{
+    height: 100vh;
+}
+
+/*============ BUTTON PLAY ============*/
+/* Boutton Play première page*/
+
+ #playGame{
+    font-family: 'Bowlby One SC', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;;
+    font-size : 3em;
+    width: 300px;
+    background-color: rgba(39, 38, 38, 0.95);
+    color : white;
+    height: 300px;
+    border-radius: 50%;
+    border : solid 12px white;
+    border-style : dotted;
+    box-shadow:
+    0 0 0 10px rgba(39, 38, 38, 0.95),
+    0 0 0 15px hsl(0, 0%, 90%);
+    -webkit-animation: rotation 2s linear;
+    box-sizing:content-box;
+} 
+
+#playGame:hover{
+    font-size : 4em;
+    height: 400px;
+    width: 400px;
+}
+@-webkit-keyframes rotation {
+    from {
+            -webkit-transform: rotate(0deg);
+    }
+    to {
+            -webkit-transform: rotate(359deg);
+    }
+}
+#playGame:focus{
+    box-shadow: none;
+}
+
+
+
+
+/*============ TIMER ============*/
+.clignote {
+    color:green;
+    animation: clignote 2s linear infinite;
+}
+@keyframes clignote {  
+    50% { opacity: 0; }
+}
+.minuteur{
+    font-family: 'DJB';
+}
+
+h1{
+    font-family: 'Stjedise';
+    font-size : 5em;
+}
+
+
+
+

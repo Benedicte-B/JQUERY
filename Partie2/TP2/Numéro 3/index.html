@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Link Bootstrap 4.6-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!--Link CSS-->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!--Script FontAwasome-->
+    <script  src = " https://kit.fontawesome.com/d38cea82af.js " crossorigin ="anonymous"></script>  
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <title>JQUERY Partie 2 - TP 1</title>
+</head>
+<body>
+    <div class="container-fluid bgPart1 text-secondary">
+        <!-- Page 1 : Button Entrer -->
+        <div class="row d-block" id="firstPage">
+            <div class="col-12 firstPage text-center d-flex justify-content-center align-items-center">
+                <button class="btn" id="buttonEnter"> Entrer</button>
+            </div>
+        </div>
+        <!-- Part 2 : Notes -->
+        <div class="d-none" id="secondPage">
+            <!-- Part 2 - Row 1 : Consigne -->
+            <div class="row" >
+                <div class="col-5 offset-4 mt-5 pt-5">
+                    <h1 class=" mt-5">Relevé de notes : </h1>
+                    <p>Saisie tes notes sur 20 pour les matières suivantes</p>
+                </div>
+            </div>
+            <!-- Part 2 - row 1 :  Saisie notes-->
+            <div class="row">
+                <div class="col-5 offset-4 mt-n4">
+                        <div class="form">
+                            <div>
+                                <label for="guessField" >Entrez votre proposition :</label>
+                            </div>
+                            <div>
+                                <input type="text" name="number" class="guessField">
+                            </div>
+                            <div>
+                                <label for="noteMaths" > Maths :</label>
+                            </div>
+                            <div>
+                                <input type="text" name = "noteMaths" class="noteMaths">
+                            </div>
+                            <div>
+                                <label for="text" > Francais :</label>
+                            </div>
+                            <div>
+                                <input type="text" name = "noteFr" class="noteFr">
+                            </div>
+                            <div>
+                                <label for="noteHist" > Histoire :</label>
+                            </div>
+                            <div>
+                                <input type="text" name = "noteHist" class="noteHist">
+                            </div>
+                            <div>
+                                <label for="noteSciences" > Sciences :</label>
+                            </div>
+                            <div>
+                                <input type="text" name = "noteSciences" class="noteSciences">
+                            </div>
+                            <div>
+                                <label for="noteSport" > Sport :</label>
+                            </div>
+                            <div>
+                                <input type="text" name = "noteSport" class="noteSport">
+                            </div>
+                            <button clas="btn btn-large" id="buttonValider">Valider</button>
+                            <!-- <div>
+                                <input type="submit" value="Valider" class="guessSubmit btn btn-light my-2">
+                            </div> -->
+                        </div>
+                </div>
+            </div>
+            <!-- Part 2 - Row 4 : Indices -->
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="moyenne"></p>
+                </div>
+                <div class="col-12 text-center">
+                    <p class="appreciation"></p>
+                </div>
+            </div>
+        </div>
+        <!-- Part 3 : Results -->
+        <div class="d-none" id="thirdPage">
+            <!-- Part 3 - Row 1 : Gagné/perdu -->
+            <div class="row ">
+                <div class="col-4 offset-4 text-center">
+                    <div class="moyenne"></div>
+                    <p class="appreciation"></p>
+                    <p class="win"></p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!--Script Boostrap JQuery-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <!--Script JS-->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

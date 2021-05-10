@@ -1,10 +1,33 @@
 // JQUERY Partie 2 - TP 1
-// Insérer une condition chiffre entre 1 et 100
-// Afficher le temps écoulé OK
+// Insérer une condition chiffre entre 1 et 100 avec message d'alerte OK
+// Créer une REGEX
+// Afficher le temps écoulé qui clignotte OK
 // Nombre tentatives OK 
-// Nombre de partie
+// Nombre de partie jouées, gagnées, perdues OK 
+// Récupérer le meilleur temps ?? 
 
+/*=================== VARIABLES MINUTEUR ==================*/
+/* Variables à déclarer pour le minuteur 
+const buttonStart = document.querySelector("[data-action = 'start' ]");
+const buttonStop = document.querySelector("[data-action = 'stop' ]");
+const buttonReset = document.querySelector("[data-action = 'reset' ]");*/
+/* Variables utiles */
+const minuteur = document.querySelector(".minuteur");
+const minutes = document.querySelector(".minutes");
+const seconds = document.querySelector(".seconds");
+let timerTime = 00;
+let interval;
+let isRanning = false;
 
+/*=================== VARIABLES COMPTEUR ==================*/
+let winCounter = 0;
+let looseCounter = 0;
+let playCounter = 0;
+let winChamp = document.querySelector('.winChamp');
+let looseChamp = document.querySelector('.looseChamp');
+let playChamp = document.querySelector('.playChamp');
+
+/*====================== VARIABLES JEU ======================*/
 // Définir un nombre aléatoire entre 1 et 100
 let randomNumber = Math.floor(Math.random() * 100) + 1;
 
@@ -22,7 +45,7 @@ let counter = document.querySelector('.counter');
 let guessCount = 1;
 let resetButton;
 
-
+/*====================== FONCTION JEU ======================*/
 // Fonction jeu
 function checkGuess() {
     // Récupére la valeur saisie dans le champs texte 
@@ -36,20 +59,23 @@ function checkGuess() {
     if (guessCount === 1) {
         //Ajout texte Propositions précédentes et précédentes saisies 
         guesses.textContent = 'Propositions précédentes : ';
+        startTimer();
     }
     guesses.textContent += userGuess + ' ';
+
     // Réussite
     if (userGuess === randomNumber) {
         lastResult.textContent = 'Bravo, vous avez trouvé le nombre !';
         lastResult.style.backgroundColor = 'green';
         lowOrHi.textContent = '';
         counter.textContent =  guessCount;
+        winCounter++;
         setGameOver();
-        // Echec au bout de 10 tentatives (Partie à supprimer pour l'ex)
     } else if (guessCount === 10) {
         lastResult.textContent = '!!! PERDU !!!';
         counter.textContent =  guessCount;
         setGameOver();
+        looseCounter++;
         // Alerte + ou -
     } else {
         lastResult.textContent = 'Faux !';
@@ -66,6 +92,7 @@ function checkGuess() {
     guessField.focus();
 }
 
+/*====================== FONCTION PERDU ======================*/
 guessSubmit.addEventListener('click', checkGuess);
 // Fonction perdu 
 function setGameOver() {
@@ -75,8 +102,13 @@ function setGameOver() {
     resetButton.textContent = 'Start new game';
     document.body.appendChild(resetButton);
     resetButton.addEventListener('click', resetGame);
+    stopTimer();
+    winChamp.textContent = winCounter;
+    looseChamp.textContent =  looseCounter;
+    playChamp.textContent =  playCounter;
 }
 
+/*====================== FONCTION REPARTIR A 0 ======================*/
 // Fonction repartir à 0
 function resetGame() {
     guessCount = 1;
@@ -85,9 +117,8 @@ function resetGame() {
     for (let i = 0; i < resetParas.length; i++) {
         resetParas[i].textContent = '';
     }
-
     resetButton.parentNode.removeChild(resetButton);
-
+    /* Remise à 0 des variables*/
     guessField.disabled = false;
     guessSubmit.disabled = false;
     guessField.value = '';
@@ -96,22 +127,15 @@ function resetGame() {
     lastResult.style.backgroundColor = 'white';
 
     randomNumber = Math.floor(Math.random() * 100) + 1;
+    resetTimer();
+    playCounter++;
+    winChamp.textContent = winCounter;
+    looseChamp.textContent =  looseCounter;
+    playChamp.textContent =  playCounter;
 }
 
 
-/*======================HORLOGE======================*/
-/** TODO: declarer  les attributes */
-const buttonStart = document.querySelector("[data-action = 'start' ]");
-const buttonStop = document.querySelector("[data-action = 'stop' ]");
-const buttonReset = document.querySelector("[data-action = 'reset' ]");
-const minuteur = document.querySelector(".minuteur");
-const minutes = document.querySelector(".minutes");
-const seconds = document.querySelector(".seconds");
-let timerTime = 00;
-let interval;
-let isRanning = false;
-
-/** TODO: declarer  les  fonctions */
+/*========= FONCTIONS START STOP RESET MINUTEUR ==========*/
 /**
  * @method: qui declenche le minuteur
  */
@@ -120,6 +144,7 @@ function startTimer() {
         interval = setInterval(incrementTimer, 1000);
         isRanning = true;
     }
+    $('.minuteur').addClass("clignote");
 }
 /**
  * @method : qui stop  le minuteur
@@ -129,6 +154,7 @@ function stopTimer() {
         clearInterval(interval); // clearInterval() methode js
         isRanning = false;
     }
+    $('.minuteur').removeClass("clignote");
 }
 /**
  * @method: qui resert le minuteur
@@ -139,8 +165,10 @@ function resetTimer() {
     minutes.innerText = '00';
     seconds.innerText = '00';
 }
+
+/*================= FONCTIONNEMENT DU TIMER =================*/
 /**
- *  @method : calculer le temps incremanter par le timer
+ *  @method : calculer le temps incremanté par le timer
  * */
 function incrementTimer() {
     timerTime++;
@@ -156,7 +184,17 @@ function zeroNumber(number) {
     return ( number < 10 ) ? '0' + number : number;
 
 }
-/** TODO: initialiser the EventListener */
-guessSubmit.addEventListener('click', startTimer);
-buttonStop.addEventListener('click', stopTimer);
-buttonReset.addEventListener('click', resetTimer);
+winChamp.textContent = 'GAGNÉ  : ' + winCounter;
+looseChamp.textContent =  'PERDU  : ' + looseCounter;
+playChamp.textContent =  'Nombre de parties  : ' + playCounter;
+
+function win5() {
+    let userGuess = Number(guessField.value);
+        if( userGuess >= 1 && userGuess <= 100){
+        } else {
+            alert ('Dommage ! Sois sérieux un peu ! Lis les consignes ! On t"as dit un nombre entre 1 et 100, écoute un peu bon sang !')
+        };
+    if ( winCounter >= 5 ){
+            $('.win5').prepend(`<img src="assets/img/5.jpeg" alt="5 victoires">`)
+    } else {}
+}

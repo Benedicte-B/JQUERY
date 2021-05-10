@@ -1,0 +1,144 @@
+
+/*============ FONTS ============*/
+@font-face {
+    font-family:'DJB' ;
+    src: url('../font/DJB.ttf');
+}
+@font-face {
+    font-family:'Starjout' ;
+    src: url('../font/Starjout.ttf');
+}
+@font-face {
+    font-family:'Stjedise' ;
+    src: url('../font/STJEDISE.TTF');
+}
+@font-face {
+    font-family: 'Gill Sans Light';
+    src: url('../font/gill-sans-mt-light.ttf');
+}
+/*============ MISE EN FORME TEXTE ============*/
+h1{
+    font-family: 'Bowlby One SC';
+    font-size : 2.5em;
+}
+h2{
+    font-family: 'Gill Sans Light';
+    font-size : 2em;
+}
+body{
+    font-family: 'Gill Sans Light';
+    font-size : 1em;
+}
+p{
+    font-family: 'Gill Sans Light';
+    font-size : 1em;
+}
+
+/*============ BACKGROUND ============*/
+.bgLJP1{
+    background-image : url('../img/bg-LJP-part1.png');
+    background-size: cover ;
+    height: 100vh;
+}
+.bgLJP2{
+    background-image : url('../img/bg-LJP-part2.png');
+    background-size: cover ;
+    height: 100vh;
+}
+/* Taille page*/
+.firstPage{
+    height: 100vh;
+}
+
+/*============ BUTTON PLAY ============*/
+/* Boutton PlayGame PART 1*/
+#playGame{
+    font-family: 'Bowlby One SC', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;;
+    font-size : 3em;
+    color : white;
+    width: 300px;
+    height: 300px;
+    background-image: url(../img/LJP-boutton.png);
+    background-size: cover;
+    -webkit-animation: rotation 2s linear;
+} 
+#playGame:hover{
+    font-size : 4em;
+    height: 400px;
+    width: 400px;
+}
+#playGame:focus{
+    box-shadow: none;
+}
+@-webkit-keyframes rotation {
+    from {
+    -webkit-transform: rotate(0deg);
+    }
+    to {
+    -webkit-transform: rotate(359deg);
+    }
+}
+/* TEST Effet d'apparition zoom*/
+/* .slide-in-fwd-center{
+    -webkit-animation: slide-in-fwd-center 0.4s cubic-bezier(0.785, 0.135, 0.150, 0.860) both;
+    animation: slide-in-fwd-center 0.4s cubic-bezier(0.785, 0.135, 0.150, 0.860) both;
+}
+@-webkit-keyframes slide-in-fwd-center {
+    0% {
+    -webkit-transform: translateZ(-1400px);
+    transform: translateZ(-1400px);
+    opacity: 0;
+    }
+    100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+    }
+}
+@keyframes slide-in-fwd-center {
+    0% {
+    -webkit-transform: translateZ(-1400px);
+    transform: translateZ(-1400px);
+    opacity: 0;
+    }
+    100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+    }
+} */
+
+/*============ PART 2 : TIMER ============*/
+.clignote {
+    animation: clignote 2s linear infinite;
+}
+@keyframes clignote {  
+    50% { opacity: 0; }
+}
+.minuteur{
+    font-family: 'DJB';
+    text-shadow: rgb(255, 255, 255) 1px 0 4px;;
+}
+
+
+
+.guesses{
+    font-family: 'Gill Sans Light';
+    font-size : 1em;
+}
+.guessField {
+    font-family: 'Gill Sans Light';
+    font-size : 1em;
+    width: 200px;
+    height: 50px;;
+}
+.guessField::placeholder {
+    font-family: 'Gill Sans Light';
+    font-size : 1em;
+    text-align: center;
+}
+
+.counter{
+    font-family: 'Roboto';
+    font-size : 1em;
+}
