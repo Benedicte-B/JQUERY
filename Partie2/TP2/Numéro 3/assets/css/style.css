@@ -126,3 +126,26 @@ p{
     margin-bottom: 5px;
     outline: solid 1px #A9A8B2;
 }
+
+
+/* Notes */
+.ech1{
+    color : red;
+    background-color: red;
+}
+.ech2{
+    color : darkred;
+    background-color:     color : darkred;
+    ;
+}
+.ech3{
+    color : green;
+    background-color: green;
+}
+.ech4{
+    color : darkgreen;
+    background-color: darkgreen;
+}
+.ech5{
+    color : rgb(184, 156, 2);
+}

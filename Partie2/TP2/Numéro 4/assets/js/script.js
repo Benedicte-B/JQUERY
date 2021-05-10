@@ -8,6 +8,13 @@
 // Nombre de partie jouées, gagnées, perdues OK 
 // Récupérer le meilleur temps ?? 
 
+
+/*=================== CORRECTION ==================*/
+// Utiliser des if else : OK
+// .text au lieu de .textContent
+// .val() au lieu de querySelector.value
+
+
 /*=================== DECLARER LES VARIABLES ==================*/
 /*Part 1 : Button*/
 let buttonEnter = $('#buttonEnter');
@@ -80,7 +87,7 @@ buttonValider.click(function(){
     thirdPage.addClass('d-block');
     /* Affichage de la moyenne et note */    
     prenom.textContent = nomEleve;
-    moyenne.textContent = ' ta moyenne est de : ' + moyenneCalc;
+    moyenne.textContent = ' Ta moyenne est de : ' + moyenneCalc;
     caseMaths.textContent = noteMaths +'/20';
     caseFr.textContent = noteFr +'/20';
     caseHist.textContent = noteHist +'/20';
@@ -92,19 +99,19 @@ buttonValider.click(function(){
         appreciation.textContent = 'En dessous de la moyenne';
         commentaire.textContent = 'Il va falloir se secouer ' + nomEleve;
     }
-    if (moyenneCalc >=10 && moyenneCalc < 13) {
+    else if (moyenneCalc >=10 && moyenneCalc < 13) {
         appreciation.textContent = 'Moyen';
         commentaire.textContent = 'Poursuis tes efforts ' + nomEleve;
     }
-    if (moyenneCalc >=13 && moyenneCalc < 16) {
+    else if (moyenneCalc >=13 && moyenneCalc < 16) {
         appreciation.textContent = 'Bien';
         commentaire.textContent = 'Tu es dans la bonne voie ' + nomEleve;
     }
-    if (moyenneCalc >=16 && moyenneCalc < 20) {
+    else if (moyenneCalc >=16 && moyenneCalc < 20) {
         appreciation.textContent = 'Très bien';
         commentaire.textContent = 'Rien à dire ! ' + nomEleve;
     }
-    if (moyenneCalc == 20) {
+    else if (moyenneCalc == 20) {
         appreciation.textContent = 'Excellent';
         commentaire.textContent =nomEleve + 'tu reçois les Félicitations du conseil de classe' ;
     }
@@ -113,19 +120,19 @@ buttonValider.click(function(){
         appMaths.textContent = 'En dessous de la moyenne';
         caseMaths.style.color = 'red';
     }
-    if (noteMaths >=10 && noteMaths < 13) {
+    else if (noteMaths >=10 && noteMaths < 13) {
         appMaths.textContent = 'Moyen';
         caseMaths.style.color = 'darkred';
     }
-    if (noteMaths >=13 && noteMaths < 16) {
+    else if (noteMaths >=13 && noteMaths < 16) {
         appMaths.textContent = 'Bien';
         caseMaths.style.color = 'green';
     }
-    if (noteMaths >=16 && noteMaths < 20) {
+    else if (noteMaths >=16 && noteMaths < 20) {
         appMaths.textContent = 'Très bien';
         caseMaths.style.color = 'darkgreen';
     }
-    if (noteMaths == 20) {
+    else if (noteMaths == 20) {
         appMaths.textContent = 'Excellent';
         caseMaths.style.color = 'rgb(184, 156, 2)';
     }
@@ -134,19 +141,19 @@ buttonValider.click(function(){
         appFr.textContent = 'En dessous de la moyenne';
         caseFr.style.color = 'red';
     }
-    if (noteFr  >=10 && noteFr  < 13) {
+    else if (noteFr  >=10 && noteFr  < 13) {
         appFr.textContent = 'Moyen';
         caseFr.style.color = 'darkred';
     }
-    if (noteFr  >=13 && noteFr  < 16) {
+    else if (noteFr  >=13 && noteFr  < 16) {
         appFr.textContent = 'Bien';
         caseFr.style.color = 'green';
     }
-    if (noteFr  >=16 && noteFr  < 20) {
+    else if (noteFr  >=16 && noteFr  < 20) {
         appFr.textContent = 'Très bien';
         caseFr.style.color = 'darkgreen';
     }
-    if (noteFr  == 20) {
+    else if (noteFr  == 20) {
         appFr.textContent = 'Excellent';
         caseFr.style.color = 'rgb(184, 156, 2)';
     }
@@ -155,19 +162,19 @@ buttonValider.click(function(){
         appHist.textContent = 'En dessous de la moyenne';
         caseHist.style.color = 'red';
     }
-    if (noteHist  >=10 && noteHist  < 13) {
+    else if (noteHist  >=10 && noteHist  < 13) {
         appHist.textContent = 'Moyen';
         caseHist.style.color = 'darkred';
     }
-    if (noteHist  >=13 && noteHist  < 16) {
+    else if (noteHist  >=13 && noteHist  < 16) {
         appHist.textContent = 'Bien';
         caseHist.style.color = 'green';
     }
-    if (noteHist  >=16 && noteHist  < 20) {
+    else if (noteHist  >=16 && noteHist  < 20) {
         appHist.textContent = 'Très bien';
         caseHist.style.color = 'darkgreen';
     }
-    if (noteHist  == 20) {
+    else if (noteHist  == 20) {
         appHist.textContent = 'Excellent';
         caseHist.style.color = 'rgb(184, 156, 2)';
     }
@@ -176,19 +183,19 @@ buttonValider.click(function(){
         appSciences.textContent = 'En dessous de la moyenne';
         caseSciences.style.color = 'red';
     }
-    if (noteSciences  >=10 && noteSciences  < 13) {
+    else if (noteSciences  >=10 && noteSciences  < 13) {
         appSciences.textContent = 'Moyen';
         caseSciences.style.color = 'darkred';
     }
-    if (noteSciences  >=13 && noteSciences  < 16) {
+    else if (noteSciences  >=13 && noteSciences  < 16) {
         appSciences.textContent = 'Bien';
         caseSciences.style.color = 'green';
     }
-    if (noteSciences  >=16 && noteSciences  < 20) {
+    else if (noteSciences  >=16 && noteSciences  < 20) {
         appSciences.textContent = 'Très bien';
         caseSciences.style.color = 'darkgreen';
     }
-    if (noteSciences  == 20) {
+    else if (noteSciences  == 20) {
         appSciences.textContent = 'Excellent';
         caseSciences.style.color = 'rgb(184, 156, 2)';
     }
@@ -197,19 +204,19 @@ buttonValider.click(function(){
         appSport.textContent = 'En dessous de la moyenne';
         caseSport.style.color = 'red';
     }
-    if (noteSport  >=10 && noteSport  < 13) {
+    else if (noteSport  >=10 && noteSport  < 13) {
         appSport.textContent = 'Moyen';
         caseSport.style.color = 'darkred';
     }
-    if (noteSport  >=13 && noteSport  < 16) {
+    else if (noteSport  >=13 && noteSport  < 16) {
         appSport.textContent = 'Bien';
         caseSport.style.color = 'green';
     }
-    if (noteSport  >=16 && noteSport  < 20) {
+    else if (noteSport  >=16 && noteSport  < 20) {
         appSport.textContent = 'Très bien';
         caseSport.style.color = 'darkgreen';
     }
-    if (noteSport  == 20) {
+    else if (noteSport  == 20) {
         appSport.textContent = 'Excellent';
         caseSport.style.color = 'rgb(184, 156, 2)';
     }
